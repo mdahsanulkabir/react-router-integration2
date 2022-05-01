@@ -16,6 +16,13 @@ const Header = () => {
                 <Link to='/products'>Products</Link>
                 <Link to='/orders'>Orders</Link>
                 <Link to='/register'>Register</Link>
+
+                {
+                    user ? <>
+                        <Link to='/sellHistory'>Sell History</Link>
+                        <Link to='/revenue'>Total Revenu</Link>
+                    </> : <></>
+                }
                 <span>{user?.displayName && user.displayName} </span>
                 {
                     user?.uid ? <button onClick={() => signOut(auth)}>Sign out</button> :
